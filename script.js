@@ -1,6 +1,11 @@
 const notesContainer = document.querySelector(".notes-container");
 const btn = document.querySelector(".btn");
 
+function updateStorage(){
+    localStorage.setItem("wrapper",notesContainer.innerHTML)
+
+}
+
 btn.addEventListener("click", () => {
   let wrapper = document.createElement("div");
   wrapper.className = "note-box";
@@ -18,5 +23,6 @@ btn.addEventListener("click", () => {
 
   icon.addEventListener("click", () => {
     wrapper.remove();
+    updateStorage();
   });
 });
